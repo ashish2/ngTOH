@@ -2,9 +2,9 @@
 
     <p>
         <label>Name: 
-            {{heroes[0].name}}
+            <!-- {{heroes[0].name}} -->
             <br />
-            <input [(ngModel)]="heroes[0].name" placeholder="name" />
+            <!-- <input [(ngModel)]="heroes[0].name" placeholder="name" /> -->
         </label>
     </p>
 
@@ -22,16 +22,10 @@
     <h2>My Heroes</h2>
     <ul class="heroes">
         <li *ngFor="let hero of heroes" 
-            (click)="onClick(hero)" 
             (dblclick)="removeSelectedHero()"
-            [class.selected]="hero === selectedHero"
         >
-            <span class="badge">{{hero.id}}</span> {{hero.name}}
+            <a routerLink="/detail/{{hero.id}}"><span class="badge">{{hero.id}}</span>{{hero.name}}</a>
         </li>
     </ul>
-
-    <app-hero-detail 
-        [hero]="selectedHero"
-    ></app-hero-detail>
 
 </div>

@@ -15,7 +15,7 @@ export class HeroesComponent implements OnInit {
 
   value: string = "RandomVal";
 
-  selectedHero: Hero;
+  // selectedHero: Hero;
 
   constructor(private heroService: HeroService) { 
     // console.log("tH: ", this.heroes);
@@ -29,13 +29,13 @@ export class HeroesComponent implements OnInit {
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes );
   }
 
-  onClick(hero: Hero): void {
-    console.log("onC: H", hero);
-    this.selectedHero = hero;
-  }
+  // onClick(hero: Hero): void {
+  //   console.log("onC: H", hero);
+  //   this.selectedHero = hero;
+  // }
 
-  removeSelectedHero() {
-    this.selectedHero = undefined;
-  }
+  // removeSelectedHero() {
+  //   this.selectedHero = undefined;
+  // }
 
 }
