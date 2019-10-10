@@ -108,5 +108,16 @@ export class HeroService {
       )
   }
 
+  testObservable(heroName: string): Observable<string>{
+    return of(heroName).pipe(
+      map(
+        x => {
+          console.log("Here is x: ", x)
+          return x
+        }
+      )
+    );
+  }
+
 
 }

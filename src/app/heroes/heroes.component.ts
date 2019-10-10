@@ -50,6 +50,13 @@ export class HeroesComponent implements OnInit {
     );
   }
 
+  testObservable(hero: Hero): void {
+    const testOb = this.heroService.testObservable(hero.name)
+    testOb.subscribe(
+      x => console.log( "Subscribed to x: ", x)
+    )
+  }
+
   // onClick(hero: Hero): void {
   //   console.log("onC: H", hero);
   //   this.selectedHero = hero;
