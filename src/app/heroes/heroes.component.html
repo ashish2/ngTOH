@@ -34,7 +34,10 @@
         >
             <a routerLink="/detail/{{hero.id}}"><span class="badge">{{hero.id}}</span>{{hero.name}}</a>
             <button class="delete" title="delete Hero" (click)="delete(hero)">x</button>
-            <button class="btn" title="testObservable Func" (click)="testObservable(hero)">testObservable</button>
+            <button class="btn" 
+                title="testObservable Func" 
+                (click)="testObservable(hero)"
+            >testObservable</button>
         </li>
     </ul>
 </div>

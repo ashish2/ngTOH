@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, map, tap, filter } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { MessageService } from './message.service';
@@ -108,11 +108,19 @@ export class HeroService {
       )
   }
 
-  testObservable(heroName: string): Observable<string>{
-    return of(heroName).pipe(
+  // testObservable(heroName: string): Observable<string>{
+  testObservable(heroes: Hero[]): Observable<Hero[]>{
+    return of(heroes).pipe(
+    // return of(heroName).pipe(
       map(
         x => {
-          console.log("Here is x: ", x)
+          console.log("Here is map x: ", x)
+          return x
+        }
+      ),
+      map(
+        x => {
+          console.log("Here is MAP 2 x: ", x)
           return x
         }
       )
