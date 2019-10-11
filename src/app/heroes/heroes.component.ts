@@ -17,6 +17,9 @@ export class HeroesComponent implements OnInit {
 
   // selectedHero: Hero;
 
+  moreH: Hero[];
+  someMoreH: Hero[];
+
   constructor(private heroService: HeroService) { 
     // console.log("tH: ", this.heroes);
   }
@@ -54,11 +57,22 @@ export class HeroesComponent implements OnInit {
 
     // Let's send heroes FTM
     const testOb = this.heroService.testObservable(this.heroes)
+    const testOb2 = this.heroService.testObservable(this.heroes)
 
     // const testOb = this.heroService.testObservable(hero.name)
     testOb.subscribe(
-      x => console.log( "Subscribed to x: ", x)
+      x => {
+        this.moreH = x;
+        console.log( "moreH Subscribed to x: ", x)
+      }
     )
+    testOb.subscribe(
+      x => {
+        this.someMoreH = x;
+        console.log( "someMoreH Subscribed to x: ", x)
+      }
+    )
+
   }
 
   // onClick(hero: Hero): void {
